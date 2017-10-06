@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $("#ButtonCreateBoardSmall").click(function () {
 		var name = $("#Name").val();
-		alert(name);
+		
 		$("div").remove(".start");
         CreateBoard(5);
     });
@@ -12,7 +12,7 @@ $(document).ready(function () {
 		var name = $("#Name").val();
 		$("div").remove(".start");
 
-		alert(name);
+		
         CreateBoard(10);
 
     });
@@ -21,7 +21,7 @@ $(document).ready(function () {
 		var name = $("#Name").val();
 		$("div").remove(".start");
 
-		alert(name);
+		
         CreateBoard(15);
     });
 
