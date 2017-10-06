@@ -1,8 +1,11 @@
 ﻿
+var shipArray = ["cell12 , cell22, cell00"];
+
 $(document).ready(function () {
 
-    $("#ButtonCreateBoardSmall").click(function () {
+    CreateBoard(3);
 
+    $("#ButtonCreateBoardSmall").click(function () {
         CreateBoard(5);
     });
 
@@ -17,26 +20,43 @@ $(document).ready(function () {
         CreateBoard(15);
     });
 
-    function CreateBoard(size)
-    {
+    function CreateBoard(size) {
         var row = "<div class='divTableRow'>";
         var divEnd = "</div>";
 
         for (var i = 0; i < size; i++) {
-            $("#divTable").append(row);
+            $("#divTableID").append(row);
             for (var j = 0; j < size; j++) {
                 var cellID = "cell" + i + j;
-                var col = "<div class='divTableCell' id='" + cellID + "'>Cell: " + i + j + "</div>";
-                $("#divTable").append(col);
+                var col = "<div class='divTableCell' id='" + cellID + "'></div>";
+                $("#divTableID").append(col);
             }
-            $("#divTable").append(divEnd);
+            $("#divTableID").append(divEnd);
         }
     }
 
-    $("#cell00").click(function () {
-        var cell00 = $("#cell00").text();
-        alert(cell00);
+    function checkIfHit(shotX, shotY)
+    {
+        var nrShips = shipArray.length;
+
+        for (var i = 0; i < nrShips; i++) {
+            var shipY = shipArray[i][4];
+            var shipX = shipArray[i][5];
+        }
+    };
+
+    $("#divTableID .divTableCell").click(function () {
+        $(this).css("background-color", "red");
+
+        var cellID = $(this).attr('id');
+        var cellx = cellID[5]
+        var celly = cellID[4]
+
+        //alert(celly + cellx);
+
+        checkIfHit(cellx, celly);
     });
+
 });
 
 

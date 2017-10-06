@@ -7,7 +7,7 @@ p {
 
 .divTable {
     display: table;
-    width: 10%;
+    
 }
 
 .divTableRow {
@@ -23,6 +23,9 @@ p {
     border: 1px solid #999999;
     display: table-cell;
     padding: 3px 10px;
+    width: 50px;
+    height: 50px;
+    background-color: forestgreen;
 }
 
 .divTableHeading {
