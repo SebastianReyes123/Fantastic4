@@ -7,20 +7,28 @@
 $(document).ready(function () {
 
     $("#ButtonCreateBoardSmall").click(function () {
-
+		var name = $("#Name").val();
+		alert(name);
+		$("div").remove(".start");
         CreateBoard(5);
         PlaceShip(5, 1);
     });
 
     $("#ButtonCreateBoardMed").click(function () {
+		var name = $("#Name").val();
+		$("div").remove(".start");
 
+		alert(name);
         CreateBoard(10);
         PlaceShip(10, 2)
 
     });
 
     $("#ButtonCreateBoardLarge").click(function () {
+		var name = $("#Name").val();
+		$("div").remove(".start");
 
+		alert(name);
         CreateBoard(15);
         PlaceShip(15, 5);
     });
