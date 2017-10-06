@@ -2,18 +2,26 @@
 $(document).ready(function () {
 
     $("#ButtonCreateBoardSmall").click(function () {
-
+		var name = $("#Name").val();
+		alert(name);
+		$("div").remove(".start");
         CreateBoard(5);
     });
 
     $("#ButtonCreateBoardMed").click(function () {
+		var name = $("#Name").val();
+		$("div").remove(".start");
 
+		alert(name);
         CreateBoard(10);
 
     });
 
     $("#ButtonCreateBoardLarge").click(function () {
+		var name = $("#Name").val();
+		$("div").remove(".start");
 
+		alert(name);
         CreateBoard(15);
     });
 
