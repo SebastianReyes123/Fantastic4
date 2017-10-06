@@ -3,14 +3,8 @@ var counterShots = 0;
 var counterHit = 0;
 
 $(document).ready(function () {
-    $("#endGameDIV").hide();
-    CreateBoard(5);
-    PlaceShip(5, 2);
 
-    //Test för att se om knappar funkar
-    //$("#cellx0y0").click(function () {
-    //    alert("Hej");
-    //});
+    $("#endGameDIV").hide();
 
     $("#ButtonCreateBoardSmall").click(function () {
         var name = $("#Name").val();
@@ -50,6 +44,15 @@ $(document).ready(function () {
             }
             $("#divTableID").append(divEnd);
         }
+
+        //Find which cell that has been clicked
+        $("#divTableID .divTableCell").click(function () {
+            $(this).css("background-color", "red");
+            var cellID = $(this).attr('id');
+
+            checkIfHit(cellID);
+        });
+
     }
 
     function PlaceShip(size, shipQuantity) {
@@ -93,19 +96,6 @@ $(document).ready(function () {
             }
         }
     }
-
-    $("#divTableID .divTableCell").click(function () {
-        $(this).css("background-color", "red");
-
-        var cellID = $(this).attr('id');
-        var cellx = cellID[7];
-        var celly = cellID[5];
-
-        //alert(celly + cellx);
-
-        checkIfHit(cellID);
-    });
-
 });
 
 
