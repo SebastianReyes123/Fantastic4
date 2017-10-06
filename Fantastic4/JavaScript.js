@@ -1,44 +1,42 @@
 ﻿
 $(document).ready(function () {
 
-    $("#cell00").click(function () {
-
-        alert("Du har klickat på cell00");
-
-    });
-
     $("#ButtonCreateBoardSmall").click(function () {
 
-        var smallSize = 5;
+        CreateBoard(5);
+    });
 
-        var row = "<div class='divTableRow'>";
-        var col = "<div class='divTableCell' id='cell00'>&nbsp;</div>"
-        var divEnd = "</div>";
+    $("#ButtonCreateBoardMed").click(function () {
 
-        for (var i = 0; i < smallSize; i++) {
-
-        }
-
-        $("#divTable").append(row + col + col + col + col + col + divEnd + divEnd + divEnd + divEnd + divEnd + divEnd
-            + row + col + col + col + col + col + divEnd + divEnd + divEnd + divEnd + divEnd + divEnd + 
-            row + col + col + col + col + col + divEnd + divEnd + divEnd + divEnd + divEnd + divEnd + 
-            row + col + col + col + col + col + divEnd + divEnd + divEnd + divEnd + divEnd + divEnd + 
-            row + col + col + col + col + col + divEnd + divEnd + divEnd + divEnd + divEnd + divEnd
-        );
-
-
-        //$("#divTable").append("<div class='divTableCell'>Test</div><div class='divTableCell'>Test</div>");
-
-        //<div class="divTableRow">
-        //    <div class='divTableCell' id="cell00">&nbsp;</div>
-        //    <div class="divTableCell" id="cell01">&nbsp;</div>
-        //</div>
-        //    <div class="divTableRow">
-        //        <div class="divTableCell" id="cell10">&nbsp;</div>
-        //        <div class="divTableCell" id="cell11">&nbsp;</div>
-        //    </div>
-        
+        CreateBoard(10);
 
     });
 
+    $("#ButtonCreateBoardLarge").click(function () {
+
+        CreateBoard(15);
+    });
+
+    function CreateBoard(size)
+    {
+        var row = "<div class='divTableRow'>";
+        var divEnd = "</div>";
+
+        for (var i = 0; i < size; i++) {
+            $("#divTable").append(row);
+            for (var j = 0; j < size; j++) {
+                var cellID = "cell" + i + j;
+                var col = "<div class='divTableCell' id='" + cellID + "'>Cell: " + i + j + "</div>";
+                $("#divTable").append(col);
+            }
+            $("#divTable").append(divEnd);
+        }
+    }
+
+    $("#cell00").click(function () {
+        var cell00 = $("#cell00").text();
+        alert(cell00);
+    });
 });
+
+
