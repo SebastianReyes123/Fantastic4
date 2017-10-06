@@ -1,24 +1,31 @@
-﻿
+﻿//var ship1;
+//var ship2;
+//var ship3;
+//var ship4;
+//var ship5;
+
 $(document).ready(function () {
 
     $("#ButtonCreateBoardSmall").click(function () {
 
         CreateBoard(5);
+        PlaceShip(5, 1);
     });
 
     $("#ButtonCreateBoardMed").click(function () {
 
         CreateBoard(10);
+        PlaceShip(10, 2)
 
     });
 
     $("#ButtonCreateBoardLarge").click(function () {
 
         CreateBoard(15);
+        PlaceShip(15, 5);
     });
 
-    function CreateBoard(size)
-    {
+    function CreateBoard(size) {
         var row = "<div class='divTableRow'>";
         var divEnd = "</div>";
 
@@ -31,6 +38,30 @@ $(document).ready(function () {
             }
             $("#divTable").append(divEnd);
         }
+    }
+
+    function PlaceShip(size, shipQuantity)
+    {
+        var shipArray = [x,x,x,x,x];
+        var shipPlace;
+        for (var i = 0; i < shipQuantity; i++) {
+            var x = 0 + Math.floor(Math.random() * size);
+            var y = 0 + Math.floor(Math.random() * size);
+            shipPlace = "cell" + x + y;
+            var doppleGanger = false;
+            for (var j = 0; j < shipArray.length; j++) {
+
+                if (shipPlace == shipArray[j]) {
+                    doppleGanger = true;
+                }
+            }
+            if (doppleGanger == true) {
+                i--;
+            }
+            else
+                shipArray[i] = shipPlace;
+        }
+        //alert(shipPlace);
     }
 
     $("#cell00").click(function () {
