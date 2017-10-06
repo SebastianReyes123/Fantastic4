@@ -40,8 +40,8 @@ $(document).ready(function () {
         var nrShips = shipArray.length;
 
         for (var i = 0; i < nrShips; i++) {
-            var shipY = shipArray[i][4];
-            var shipX = shipArray[i][5];
+            var shipY = shipArray[i][5];
+            var shipX = shipArray[i][7];
         }
     };
 
