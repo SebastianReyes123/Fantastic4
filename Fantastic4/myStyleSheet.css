@@ -1,28 +1,16 @@
-﻿body {
-}
-
+﻿
 p {
     font-weight: bold;
 }
-
 .divTable {
-    display: table;
-    
+	display: table;
+	
 }
-
-
-
 .divTableRow {
     display: table-row;
 }
-
-.divTableHeading {
-    background-color: #EEE;
-    display: table-header-group;
-}
-
-.divTableCell, .divTableHead {
-    border: 1px solid #999999;
+.divTableCell { 
+    border: 2px solid #999999;
     display: table-cell;
     padding: 3px 10px;
     width: 50px;
@@ -30,18 +18,39 @@ p {
     background-color: forestgreen;
 }
 
-.divTableHeading {
-    background-color: #EEE;
-    display: table-header-group;
-    font-weight: bold;
+.HighTableRow {
+	display: table-row;
+	border-bottom-style: solid;
+	border-bottom-color:black;
+		
 }
-
-.divTableFoot {
-    background-color: #EEE;
-    display: table-footer-group;
-    font-weight: bold;
+.HighTable {
+	display: table;
+		
 }
-
-.divTableBody {
-    display: table-row-group;
+.HighTableCell {
+	display: table-cell;
+	padding: -1px 10px;
+	font-size: larger;
+	height: 36px;
+}
+#HighTableHeading {
+	font-weight: bold;
+	padding-right: 60px;
+	font-size: large;
+}
+#highCell1 {
+	width: 50px;
+	padding-right: 60px;
+}
+#highCell2 {
+	width: 50px;
+	padding-right: 60px;
+	}
+.HighTableCellPlayer {
+	display: table-cell;
+	padding: -1px 10px;
+	font-size: xx-large;
+	font-weight:bold;
+	height: 36px;
 }

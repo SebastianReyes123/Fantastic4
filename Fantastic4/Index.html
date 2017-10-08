@@ -2,30 +2,42 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Fantastic4 sink ship</title>
+    <title>FANTASTIC4'S SINK SHIP</title>
     <script src="Scripts/jquery-3.2.1.js"></script>
     <link href="myStyleSheet.css" rel="stylesheet" />
     <script src="JavaScript.js"></script>
 </head>
 <body>
 
-    <h2>Sink Ship</h2>
+	<center>
+    <h2 id="head">==|FANTASTIC4'S SINK SHIP|==</h2>
+		<div id="playGameDIV">
+			<!--ID för att gömma spelet när spelet är slut-->
 
-    <div id="playGameDIV">
+			<div class="start" id="start">
+				<!--ID/class för att gömma namn-textrutan och knapparna efter att ett val är gjort-->
+				Name: <input type="text" id="Name" /><br />
+				<input class="buttonSize" type="button" value="Small 5x5" id="ButtonCreateBoardSmall" /><br />
+				<input type="button" value="Medium 10x10" id="ButtonCreateBoardMed" /><br />
+				<input type="button" value="Large 15x15" id="ButtonCreateBoardLarge" /><br />
+			</div>
 
-        <div class="start" id="start">
-            Name: <input type="text" id="Name" /><br />
-            <input class="buttonSize" type="button" value="Small 5x5" id="ButtonCreateBoardSmall" /><br />
-            <input type="button" value="Medium 10x10" id="ButtonCreateBoardMed" /><br />
-            <input type="button" value="Large 15x15" id="ButtonCreateBoardLarge" /><br />
-        </div>
+			<div class="divTable" id="divTableID"></div> <!--Skapar en table referens som sen byggs ut i JS-->
+		</div> <!--playGameDIV slutar här-->
+	</center>
+	<center>
 
-        <div class="divTable" id="divTableID"></div>
-    </div>
-
-    <div id="endGameDIV">
-        <h1>GAME OVER!</h1>
-    </div>
-
+		<div id="endGameDIV">
+			<h1>==GAME OVER!==</h1>
+			<h2 id="high">HIGHSCORE<br /></h2>
+			
+			<div class="HighTable" id="HighTableID">
+				<div class="HighTableRow"></div>
+				<div class="HighTableCell" id="HighTableHeading"> </div>
+				<div class="HighTableCell" id="HighTableHeading">NAME</div>
+				<div class="HighTableCell" id="HighTableHeading">SCORE</div>
+			</div>
+		</div>
+	</center>
 </body>
 </html>
