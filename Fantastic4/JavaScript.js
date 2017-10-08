@@ -110,24 +110,23 @@ $(document).ready(function () {
 		// Hämta array från local storage
 		var highscoreName = JSON.parse(localStorage.getItem("myhighscoreNameArray42"));
 		var highscoreScore = JSON.parse(localStorage.getItem("myhighscoreScoreArray42"));
-
-		if (highscoreName == null)//Sätter highscoreName till ett värde första gången spelet körs, då värdet är null från början.
+		//Sätter highscoreName till ett värde första gången spelet körs, då värdet är null från början.
+		if (highscoreName == null)
 			highscoreName = [];
-
-		if (highscoreScore == null) //Sätter highscoreScore till ett värde första gången spelet körs, då värdet är null från början.
+		if (highscoreScore == null) 
 			highscoreScore = [];
-
-		if (highscoreScore.length > 10) {
+		//Lägger till spelarens resultat i två arreyer för att utifrån det kunna spara och skapa en lista.
+		if (highscoreScore.length > 10) { //Begränsar listan till 11 element, så att den inte skenar iväg i strl.
 			highscoreName[highscoreName.length - 1] = name;
 			highscoreScore[highscoreScore.length - 1] = counterShots;
-			var length = 10;
+			var length = 10; //längd för att skriva ut listan.
 		}
 		else {
 			highscoreName[highscoreName.length] = name;
 			highscoreScore[highscoreScore.length] = counterShots;
-			var length = highscoreScore.length;
+			var length = highscoreScore.length; //längd för att skriva ut listan.
 		}
-
+		//Sortering av highscorelistan.
 		for (var i = 0; i < highscoreScore.length; i++) {
 
 			for (var j = i + 1; j < highscoreScore.length; j++) {
@@ -142,17 +141,15 @@ $(document).ready(function () {
 				}
 			}
 		}
-
+		//Skapar en div-Highscorelista.
 		var highRow = "<div class='HighTableRow'>";
 		var divEnd = "</div>";
-
-
 		for (var i = 0; i < length; i++) {
 			$("#HighTableID").append(highRow);
 			for (var j = 0; j < 3; j++) {
 				var highCellID = "highCell" + j;
 				var col = [];
-				if (highscoreName[i] == name && highscoreScore[i] == counterShots) {
+				if (highscoreName[i] == name && highscoreScore[i] == counterShots) { //Ger det senaste resultatet en egen klass för att kunna highlighta den i listan.
 					col[0] = "<div class='HighTableCellPlayer' id='" + highCellID + "'>#" + (i + 1) + "</div>";
 					col[1] = "<div class='HighTableCellPlayer' id='" + highCellID + "'>" + highscoreName[i] + "</div>";
 					col[2] = "<div class='HighTableCellPlayer' id='" + highCellID + "'>" + highscoreScore[i] + "</div>";
