@@ -8,26 +8,24 @@
     <script src="JavaScript.js"></script>
 </head>
 <body>
-    <h1>Patrik is lurking somewhere..</h1>
 
     <h2>Sink Ship</h2>
 
-	<div class="start" id="start">
-		Name: <input type="text" id="Name" /><br />
-		<input type="button" value="Small 5x5" id="ButtonCreateBoardSmall" /><br />
-		<input type="button" value="Medium 10x10" id="ButtonCreateBoardMed" /><br />
-		<input type="button" value="Large 15x15" id="ButtonCreateBoardLarge" /><br />
+    <div id="playGameDIV">
 
-	</div>
-		<div class="divTable" id="divTable">
-			<div class="divTableBody">
-				<!--<div class="divTableRow">
-					<div class="divTableCell" id="cell0e0">test</div>
-				</div>-->
-			</div>
-		</div>
+        <div class="start" id="start">
+            Name: <input type="text" id="Name" /><br />
+            <input class="buttonSize" type="button" value="Small 5x5" id="ButtonCreateBoardSmall" /><br />
+            <input type="button" value="Medium 10x10" id="ButtonCreateBoardMed" /><br />
+            <input type="button" value="Large 15x15" id="ButtonCreateBoardLarge" /><br />
+        </div>
 
+        <div class="divTable" id="divTableID"></div>
+    </div>
 
+    <div id="endGameDIV">
+        <h1>GAME OVER!</h1>
+    </div>
 
 </body>
 </html>
